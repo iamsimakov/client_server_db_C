@@ -1,29 +1,29 @@
-Вначале был установлен mysql-server
+Р’РЅР°С‡Р°Р»Рµ Р±С‹Р» СѓСЃС‚Р°РЅРѕРІР»РµРЅ mysql-server
 sudo apt-get install mysql-server
-Затем из исходников был скомпилирован mysql++ (http://tangentsoft.net/mysql++/releases/mysql++-3.2.2.tar.gz)
-c помощью команд
+Р—Р°С‚РµРј РёР· РёСЃС…РѕРґРЅРёРєРѕРІ Р±С‹Р» СЃРєРѕРјРїРёР»РёСЂРѕРІР°РЅ mysql++ (http://tangentsoft.net/mysql++/releases/mysql++-3.2.2.tar.gz)
+c РїРѕРјРѕС‰СЊСЋ РєРѕРјР°РЅРґ
 tar -xvzf  mysql++-3.2.2.tar.gz
 cd mysql++-3.2.2
 ./configure --with-mysql-lib=/usr/lib/i386-linux-gnu
 make install
 
-сервер компилировался командой
+СЃРµСЂРІРµСЂ РєРѕРјРїРёР»РёСЂРѕРІР°Р»СЃСЏ РєРѕРјР°РЅРґРѕР№
 g++ -I/usr/include/mysql -I/usr/include/mysql++ db.cpp -o db -lmysqlpp -lmysqlclient
-клиент компилировался командой
+РєР»РёРµРЅС‚ РєРѕРјРїРёР»РёСЂРѕРІР°Р»СЃСЏ РєРѕРјР°РЅРґРѕР№
 g++ clientv2.cpp -o clientv2.h
 
-Сервер запускается командой
+РЎРµСЂРІРµСЂ Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ РєРѕРјР°РЅРґРѕР№
 ./dbserverv2.h {port}
-Клиент запускается
+РљР»РёРµРЅС‚ Р·Р°РїСѓСЃРєР°РµС‚СЃСЏ
 ./clientv2.h {hostname} {port} {get|set} {key}
 
-Сервер настроен следующим образом:
-пользователь root
-пароль root
-база данных mydb
-таблица mytable
+РЎРµСЂРІРµСЂ РЅР°СЃС‚СЂРѕРµРЅ СЃР»РµРґСѓСЋС‰РёРј РѕР±СЂР°Р·РѕРј:
+РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ root
+РїР°СЂРѕР»СЊ root
+Р±Р°Р·Р° РґР°РЅРЅС‹С… mydb
+С‚Р°Р±Р»РёС†Р° mytable
 
-Основные источники
+РћСЃРЅРѕРІРЅС‹Рµ РёСЃС‚РѕС‡РЅРёРєРё
 http://www.linuxhowtos.org/C_C++/socket.htm
 http://programmersforum.ru/showthread.php?t=59220
 http://www.jjask.com/475403/setting-up-mysql-in-linux
